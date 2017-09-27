@@ -70,7 +70,8 @@ Requirements:
 **Extract:**
 
 * args[0] -e
-* args[1] Url
+* args[1] Tube
+* args[2] Url
 
 **Download:**
 
