@@ -97,4 +97,9 @@
             <classpath refid="jTube.classpath"/>
         </java>
     </target>
+    <target name="test">
+    	<java classname="com.jTube.Main" failonerror="true" fork="yes">
+    	            <classpath refid="jTube.classpath"/>
+    	</java>
+   	</target>
 </project>
