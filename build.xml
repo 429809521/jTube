@@ -98,6 +98,11 @@
             <classpath refid="jTube.classpath"/>
         </java>
     </target>
+              	
+    <target name="resolveDependencies">
+          <mkdir dir="lib" />
+              <get src="http://central.maven.org/maven2/org/json/json/20140107/json-20140107.jar" dest="lib/json-20140107.jar" usetimestamp="true" />
+    </target>
        
     <target name="clean-build" depends="clean,jar"/>
               		
@@ -120,9 +125,4 @@
     <target name="run" depends="jar">
            <java jar="${dir.jar}/${ant.project.name}.jar" fork="true"/>
     </target>
-              	
-     <target name="resolveDependencies">
-         <mkdir dir="lib" />
-           <get src="http://central.maven.org/maven2/org/json/json/20140107/json-20140107.jar" dest="lib/json-20140107.jar" usetimestamp="true" />
-     </target>
 </project>
