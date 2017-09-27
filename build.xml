@@ -8,6 +8,7 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
+    <property name="dir.src" value="src"/>
     <path id="jTube.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/json-20170516.jar"/>
