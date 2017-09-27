@@ -6,7 +6,7 @@ Search and download videos from YouTube, Vimeo, xHamster and many more.
 
 **What is jTube?**
 
-jTube is a simple terminal application to search and download videos from YouTube, xHamster, Vimeo and many more. jTube is written in Java.
+**jTube is a simple terminal application to search and download videos from YouTube, xHamster, Vimeo and many more.** jTube is written in Java.
 
 # Example usage
 
