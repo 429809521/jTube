@@ -68,7 +68,7 @@ public class Main
 		 */
 		
 		/* Debug */
-		Debug.setMode(true);
+		Debug.setMode(false);
 		
 		if (Debug.getMode())
 		{
