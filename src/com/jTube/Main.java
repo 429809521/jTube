@@ -48,7 +48,8 @@ public class Main
 		 * *** Extract ***
 		 * 
 		 * args[0] -e
-		 * args[1] Url
+		 * args[1] Tube
+		 * args[2] Url
 		 * 
 		 * ***********************
 		 * 
@@ -77,7 +78,7 @@ public class Main
 			args = new String[4];
 			
 			args[0] = "-s";
-			args[1] = "-yt";
+			args[1] = "-cc";
 			args[2] = "Test";
 			args[3] = "2";
 		}
@@ -174,18 +175,18 @@ public class Main
 			switch (args[1])
 			{
 			case "-cc":
-				String url_cc = com.ccMixterExtractor.Search.Query(args[1]);
+				String url_cc = com.ccMixterExtractor.Search.Query(args[2]);
 				
 				System.out.println(url_cc);
 				break;
 			case "-vi":
-				String url_vi = com.VimeoExtractor.Search.Query(args[1]);
+				String url_vi = com.VimeoExtractor.Search.Query(args[2]);
 				
 				System.out.println(url_vi);
 				break;
 			case "-yt":
 				List<com.YouTubeExtractor.FmtStreamMap> streamMaps = 
-						com.YouTubeExtractor.Extract.Run(args[1]);
+						com.YouTubeExtractor.Extract.Run(args[2]);
 				
 				for (com.YouTubeExtractor.FmtStreamMap s: streamMaps)
 				{
@@ -200,7 +201,7 @@ public class Main
 				List<com.xHamsterExtractor.Components> Items =
 					new ArrayList<com.xHamsterExtractor.Components>();
 				
-				com.xHamsterExtractor.Search.Query(Items, args[1]);
+				com.xHamsterExtractor.Search.Query(Items, args[2]);
 				
 				int i_xh = 0;
 				
@@ -231,6 +232,7 @@ public class Main
 			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt)");
 			System.out.println("*");
 			System.out.println("* ***********************");
+			System.out.println("*");
 			System.out.println("* *** Search ***");
 			System.out.println("*");
 			System.out.println("* args[0] -s");
@@ -243,7 +245,8 @@ public class Main
 			System.out.println("* *** Extract ***");
 			System.out.println("*");
 			System.out.println("* args[0] -e");
-			System.out.println("* args[1] Url");
+			System.out.println("* args[1] Tube");
+			System.out.println("* args[2] Url");
 			System.out.println("*");
 			System.out.println("* ***********************");
 			System.out.println("*");
