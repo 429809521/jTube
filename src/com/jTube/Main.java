@@ -32,6 +32,8 @@ public class Main
 		 * Vimeo (-vi)
 		 * xHamster (-xh)
 		 * YouTube (-yt)
+		 * Instagram Picture (-ip)
+		 * Instagram Video (-iv)
 		 * 
 		 */
 		
@@ -92,14 +94,14 @@ public class Main
 			switch (args[1])
 			{
 			case "-cc":
-				List<com.ccMixterSearch.Components> Items_cc = 
-					new ArrayList<com.ccMixterSearch.Components>();
+				List<com.ccMixterSearch4Java.Components> Items_cc = 
+					new ArrayList<com.ccMixterSearch4Java.Components>();
 				
-				com.ccMixterSearch.Search.Query(Items_cc, args[2], Integer.parseInt(args[3]));
+				com.ccMixterSearch4Java.Search.Query(Items_cc, args[2], Integer.parseInt(args[3]));
 				
 				int i_cc = 0;
 				
-				for (com.ccMixterSearch.Components c:Items_cc)
+				for (com.ccMixterSearch4Java.Components c:Items_cc)
 				{
 					i_cc++;
 					
@@ -110,14 +112,14 @@ public class Main
 				}
 				break;
 			case "-vi":
-				List<com.VimeoSearch.Components> Items_vi =
-					new ArrayList<com.VimeoSearch.Components>();
+				List<com.VimeoSearch4Java.Components> Items_vi =
+					new ArrayList<com.VimeoSearch4Java.Components>();
 				
-				com.VimeoSearch.Search.Query(Items_vi, args[2], Integer.parseInt(args[3]));
+				com.VimeoSearch4Java.Search.Query(Items_vi, args[2], Integer.parseInt(args[3]));
 				
 				int i_vi = 0;
 				
-				for (com.VimeoSearch.Components c:Items_vi)
+				for (com.VimeoSearch4Java.Components c:Items_vi)
 				{
 					i_vi++;
 					
@@ -130,14 +132,14 @@ public class Main
 				}
 				break;
 			case "-yt":
-				List<com.YouTubeSearch.Components> Items_yt =
-					new ArrayList<com.YouTubeSearch.Components>();
+				List<com.YouTubeSearch4Java.Components> Items_yt =
+					new ArrayList<com.YouTubeSearch4Java.Components>();
 				
-				com.YouTubeSearch.Search.Query(Items_yt, args[2], Integer.parseInt(args[3]));
+				com.YouTubeSearch4Java.Search.Query(Items_yt, args[2], Integer.parseInt(args[3]));
 				
 				int i_yt = 0;
 				
-				for (com.YouTubeSearch.Components c:Items_yt)
+				for (com.YouTubeSearch4Java.Components c:Items_yt)
 				{
 					i_yt++;
 					
@@ -151,14 +153,14 @@ public class Main
 				}
 				break;
 			case "-xh":
-				List<com.xHamsterSearch.Components> Items_xh =
-					new ArrayList<com.xHamsterSearch.Components>();
+				List<com.xHamsterSearch4Java.Components> Items_xh =
+					new ArrayList<com.xHamsterSearch4Java.Components>();
 				
-				com.xHamsterSearch.Search.Query(Items_xh, args[2], Integer.parseInt(args[3]));
+				com.xHamsterSearch4Java.Search.Query(Items_xh, args[2], Integer.parseInt(args[3]));
 				
 				int i_xh = 0;
 				
-				for (com.xHamsterSearch.Components c:Items_xh)
+				for (com.xHamsterSearch4Java.Components c:Items_xh)
 				{
 					i_xh++;
 					
@@ -175,37 +177,37 @@ public class Main
 			switch (args[1])
 			{
 			case "-cc":
-				String url_cc = com.ccMixterExtractor.Search.Query(args[2]);
+				String url_cc = com.ccMixterExtractor4Java.Search.Query(args[2]);
 				
 				System.out.println(url_cc);
 				break;
 			case "-vi":
-				String url_vi = com.VimeoExtractor.Search.Query(args[2]);
+				String url_vi = com.VimeoExtractor4Java.Search.Query(args[2]);
 				
 				System.out.println(url_vi);
 				break;
 			case "-yt":
-				List<com.YouTubeExtractor.FmtStreamMap> streamMaps = 
-						com.YouTubeExtractor.Extract.Run(args[2]);
+				List<com.YouTubeExtractor4Java.FmtStreamMap> streamMaps = 
+						com.YouTubeExtractor4Java.Extract.Run(args[2]);
 				
-				for (com.YouTubeExtractor.FmtStreamMap s: streamMaps)
+				for (com.YouTubeExtractor4Java.FmtStreamMap s: streamMaps)
 				{
 					System.out.println(
 							s.title + Helper.printZero() +
 							s.resolution.format + Helper.printZero() +
 							s.resolution.resolution + Helper.printZero() +
-							com.YouTubeExtractor.Extract.parseUrl(s));
+							com.YouTubeExtractor4Java.Extract.parseUrl(s));
 				}
 				break;
 			case "-xh":
-				List<com.xHamsterExtractor.Components> Items =
-					new ArrayList<com.xHamsterExtractor.Components>();
+				List<com.xHamsterExtractor4Java.Components> Items =
+					new ArrayList<com.xHamsterExtractor4Java.Components>();
 				
-				com.xHamsterExtractor.Search.Query(Items, args[2]);
+				com.xHamsterExtractor4Java.Search.Query(Items, args[2]);
 				
 				int i_xh = 0;
 				
-				for (com.xHamsterExtractor.Components c:Items)
+				for (com.xHamsterExtractor4Java.Components c:Items)
 				{
 					i_xh++;
 					
@@ -215,6 +217,22 @@ public class Main
 							"Resolution: " + c.getResolution() + Helper.printZero() + 
 							"Url: " + c.getUrl());
 				}
+				break;
+			case "-ip":
+				String retValue_ip = com.InstagramPictureExtractor4Java.Search.Query(args[2]);
+				
+				String[] value_ip = retValue_ip.split(";");
+				
+				System.out.println("Title: " + value_ip[0]);
+				System.out.println("Url: " + value_ip[1]);
+				break;
+			case "-iv":
+				String retValue_iv = com.InstagramVideoExtractor4Java.Search.Query(args[2]);
+				
+				String[] value_iv = retValue_iv.split(";");
+				
+				System.out.println("Title: " + value_iv[0]);
+				System.out.println("Url: " + value_iv[1]);
 				break;
 			}
 			break;
@@ -229,7 +247,7 @@ public class Main
 			System.out.println("*");
 			System.out.println("* Supported Tubes:");
 			System.out.println("*");
-			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt)");
+			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt), Instagram Picture (-ip), Instagram Video (-iv)");
 			System.out.println("*");
 			System.out.println("* ***********************");
 			System.out.println("*");
