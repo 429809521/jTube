@@ -34,6 +34,7 @@ public class Main
 		 * YouTube (-yt)
 		 * Instagram Picture (-ip)
 		 * Instagram Video (-iv)
+		 * Dailymotion (-dm)
 		 * 
 		 */
 		
@@ -171,6 +172,24 @@ public class Main
 							"Thumbnail: " + c.getThumbnail());
 				}
 				break;
+			case "-dm":
+				List<com.DailymotionSearch4Java.Components> Items_dm =
+					new ArrayList<com.DailymotionSearch4Java.Components>();
+				
+				com.DailymotionSearch4Java.Search.Query(Items_dm, args[2], Integer.parseInt(args[3]));
+				
+				int i_dm = 0;
+				
+				for (com.DailymotionSearch4Java.Components c:Items_dm)
+				{
+					i_dm++;
+					
+					System.out.println("ID: " + i_dm + Helper.printZero() +
+							"Title: " + c.getTitle() + Helper.printZero() +
+							"Author: " + c.getAuthor() + Helper.printZero() +
+							"Url: " + c.getUrl() + Helper.printZero());
+				}
+				break;
 			}
 			break;
 		case "-e":
@@ -234,6 +253,11 @@ public class Main
 				System.out.println("Title: " + value_iv[0]);
 				System.out.println("Url: " + value_iv[1]);
 				break;
+			case "-dm":
+				String url_dm = com.DailymotionExtractor4Java.Search.Query(args[2]);
+				
+				System.out.println(url_dm);
+				break;
 			}
 			break;
 		case "-d":
@@ -247,7 +271,7 @@ public class Main
 			System.out.println("*");
 			System.out.println("* Supported Tubes:");
 			System.out.println("*");
-			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt), Instagram Picture (-ip), Instagram Video (-iv)");
+			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt), Instagram Picture (-ip), Instagram Video (-iv), Dailymotion (-dm)");
 			System.out.println("*");
 			System.out.println("* ***********************");
 			System.out.println("*");
