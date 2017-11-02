@@ -25,25 +25,23 @@
 
 package com.DailymotionExtractor4Java;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
+import java.io.IOException;
+
 import org.json.JSONObject;
 
+import com.DailymotionSearch4Java.Html;
 import com.ccMixterExtractor4Java.Log;
 
-@SuppressWarnings("deprecation")
 public class Search
 {
-	public static String Query(String url) {
+	public static String Query(String url) throws IOException {
         StringBuilder sb = new StringBuilder(url);
         sb.insert(27, "json/");
         sb.append("?fields=title,stream_h264_url,stream_h264_ld_url,stream_h264_hq_url,stream_h264_hd_url,stream_h264_hd1080_url");
         String jsonUrl = new String(sb);
 
-        String videoList = getRemoteContent(jsonUrl);
+        String videoList = Html.getContentfromUrl(jsonUrl).toString();
+        
         if((videoList == null)||(videoList.isEmpty())) {
             return null;
         }
@@ -80,23 +78,5 @@ public class Search
 			Log.println("********************************");
 
         return videoURL;
-    }
-
-    private static String getRemoteContent(String url) {
-        String content = null;
-
-        try {
-
-            @SuppressWarnings("resource")
-			HttpClient httpClient = new DefaultHttpClient();
-            HttpGet httpGet = new HttpGet(url);
-            HttpResponse httpResponse = httpClient.execute(httpGet);
-            content = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
-
-        } catch (Exception e) {
-            content = null;
-        }
-
-        return content;
     }
 }
