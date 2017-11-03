@@ -21,10 +21,7 @@ package com.YouTubeExtractor4Java;
 /* JAR
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.List;
-
-import com.YoutubeExtractor4Java.Debug;
-import com.YoutubeExtractor4Java.Log; */
+import java.util.List; */
 
 public class Operator
 {
