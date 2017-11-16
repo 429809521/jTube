@@ -31,6 +31,8 @@ import java.util.Scanner;
 
 import org.json.*;
 
+import com.ccMixterExtractor4Java.Log;
+
 public class Extract
 {	
 	public static List<FmtStreamMap> Run (String Url) throws IOException
@@ -93,6 +95,12 @@ public class Extract
 			return streamMaps;
 		}
 		
+		if (Log.getMode())
+			Log.println("FmtStreamMap null. Can't find the next subsequence of the input sequence that matches the pattern.");
+        
+        if (Log.getMode())
+			Log.println("********************************");
+
 		return null;
 	}
 	

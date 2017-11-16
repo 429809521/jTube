@@ -19,7 +19,7 @@
 package com.VimeoExtractor4Java;
 
 /* JAR
-import java.io.IOException; */
+import java.io.IOException;  */
 
 public class Operator
 {
