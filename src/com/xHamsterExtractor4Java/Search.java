@@ -39,7 +39,17 @@ public class Search
 		
 		CharSequence sb = Html.getContentfromUrl(Url);
 		
-		String expr = "players:.*?}\"}},";
+		String expr = "";
+		
+		if (Mobile.getMode())
+		{
+			expr = "players:.*?\\}\"\\}\\},";
+		}
+		else
+		{
+			expr = "players:.*?}\"}},";
+		}
+		
 		Pattern patt = Pattern.compile(expr, Pattern.DOTALL | Pattern.UNIX_LINES);
 		
 		Matcher match = patt.matcher(sb);
@@ -78,7 +88,18 @@ public class Search
         		
         		/* MP4 */
         		
-        		String expr_ = "sources:.*?},";
+        		String expr_ = "";
+        		
+        		if (Mobile.getMode())
+        		{
+        			expr_ = "sources:.*?\\},";
+        		}
+        		else
+        		{
+        			expr_ = "sources:.*?},";
+        		}
+        		
+        		
         		Pattern patt_ = Pattern.compile(expr_, Pattern.DOTALL | Pattern.UNIX_LINES);
         		
         		Matcher match_ = patt_.matcher(sb);

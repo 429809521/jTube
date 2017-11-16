@@ -21,6 +21,7 @@ package com.YouTubeExtractor4Java;
 /* JAR
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List; */
 
 public class Operator
@@ -54,5 +55,34 @@ public class Operator
 		}
 		else
 			return;
+	} */
+	
+	/* JAR
+	public static void RunCompleteProcedure() throws IOException
+	{
+		List<FmtStreamMap> streamMaps = new ArrayList<FmtStreamMap>();
+		
+		streamMaps = Extract.Run("https://www.youtube.com/watch?v=wYIcRYXG9us");
+		
+		if (streamMaps == null)
+		{
+			System.out.println("FmtStreamMap is null.");
+			
+			return;
+		}
+		
+		if (streamMaps.isEmpty() == false)
+		{
+			for (FmtStreamMap s: streamMaps)
+			{
+				System.out.println(
+						s.title + Helper.printZero() +
+						s.resolution.format + Helper.printZero() +
+						s.resolution.resolution + Helper.printZero() +
+						Extract.parseUrl(s));
+			}
+		}
+		else
+			System.out.println("FmtStreamMap is empty.");
 	} */
 }
