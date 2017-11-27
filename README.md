@@ -47,10 +47,6 @@ Requirements:
 * eclipse
 * Java SDK 8
 
-# Developer channel
-
-#jtube:matrix.org (https://about.riot.im/)
-
 # Description
 
 **Supported Tubes:**
