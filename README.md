@@ -59,6 +59,7 @@ Requirements:
 * Instagram Video (-iv)
 * Dailymotion (-dm)
 * Pornhub (-ph)
+* Facebook Video (-fv)
 
 **Search:**
 
