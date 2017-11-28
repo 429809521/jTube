@@ -55,6 +55,10 @@ Requirements:
 * Vimeo (-vi)
 * xHamster (-xh)
 * YouTube (-yt)
+* Instagram Picture (-ip)
+* Instagram Video (-iv)
+* Dailymotion (-dm)
+* Pornhub (-ph)
 
 **Search:**
 
