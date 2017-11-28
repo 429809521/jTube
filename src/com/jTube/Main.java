@@ -36,6 +36,7 @@ public class Main
 		 * Instagram Video (-iv)
 		 * Dailymotion (-dm)
 		 * Pornhub (-ph)
+		 * Facebook Video (-fv)
 		 * 
 		 */
 		
@@ -286,6 +287,14 @@ public class Main
 				System.out.println("Title: " + value_ph[0]);
 				System.out.println("Url: " + value_ph[1]);
 				break;
+			case "-fv":
+				String retValue_fv = com.FacebookVideoExtractor4Java.Search.Query(args[2]);
+				
+				String[] value_fv = retValue_fv.split(";");
+				
+				System.out.println("Title: " + value_fv[0]);
+				System.out.println("Url: " + value_fv[1]);
+				break;
 			}
 			break;
 		case "-d":
@@ -299,7 +308,7 @@ public class Main
 			System.out.println("*");
 			System.out.println("* Supported Tubes:");
 			System.out.println("*");
-			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt), Instagram Picture (-ip), Instagram Video (-iv), Dailymotion (-dm), Pornhub (-ph)");
+			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt), Instagram Picture (-ip), Instagram Video (-iv), Dailymotion (-dm), Pornhub (-ph), Facebook Video (-fv)");
 			System.out.println("*");
 			System.out.println("* ***********************");
 			System.out.println("*");
