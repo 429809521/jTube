@@ -35,6 +35,7 @@ public class Main
 		 * Instagram Picture (-ip)
 		 * Instagram Video (-iv)
 		 * Dailymotion (-dm)
+		 * Pornhub (-ph)
 		 * 
 		 */
 		
@@ -190,6 +191,25 @@ public class Main
 							"Url: " + c.getUrl() + Helper.printZero());
 				}
 				break;
+			case "-ph":
+				List<com.PornhubSearch4Java.Components> Items_ph =
+					new ArrayList<com.PornhubSearch4Java.Components>();
+				
+				com.PornhubSearch4Java.Search.Query(Items_ph, args[2], Integer.parseInt(args[3]));
+				
+				int i_ph = 0;
+				
+				for (com.PornhubSearch4Java.Components c:Items_ph)
+				{
+					i_ph++;
+					
+					System.out.println("ID: " + i_ph + Helper.printZero() +
+							"Title: " + c.getTitle() + Helper.printZero() +
+							"Duration: " + c.getDuration() + Helper.printZero() +
+							"Url: " + c.getUrl() + Helper.printZero() + 
+							"Thumbnail: " + c.getThumbnail());
+				}
+				break;
 			}
 			break;
 		case "-e":
@@ -258,6 +278,14 @@ public class Main
 				
 				System.out.println(url_dm);
 				break;
+			case "-ph":
+				String retValue_ph = com.PornhubExtractor4Java.Search.Query(args[2]);
+				
+				String[] value_ph = retValue_ph.split(";");
+				
+				System.out.println("Title: " + value_ph[0]);
+				System.out.println("Url: " + value_ph[1]);
+				break;
 			}
 			break;
 		case "-d":
@@ -271,7 +299,7 @@ public class Main
 			System.out.println("*");
 			System.out.println("* Supported Tubes:");
 			System.out.println("*");
-			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt), Instagram Picture (-ip), Instagram Video (-iv), Dailymotion (-dm)");
+			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt), Instagram Picture (-ip), Instagram Video (-iv), Dailymotion (-dm), Pornhub (-ph)");
 			System.out.println("*");
 			System.out.println("* ***********************");
 			System.out.println("*");
