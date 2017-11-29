@@ -2,6 +2,8 @@
 
 Search and download videos from YouTube, Vimeo, xHamster and many more.
 
+![alt text](https://github.com/mrklintscher/jTube/blob/master/img/jTube.png)
+
 # Introduction
 
 **What is jTube?**
