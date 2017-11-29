@@ -37,6 +37,7 @@ public class Main
 		 * Dailymotion (-dm)
 		 * Pornhub (-ph)
 		 * Facebook Video (-fv)
+		 * Eroprofile (-ep)
 		 * 
 		 */
 		
@@ -211,6 +212,25 @@ public class Main
 							"Thumbnail: " + c.getThumbnail());
 				}
 				break;
+			case "-ep":
+				List<com.EroprofileSearch4Java.Components> Items_ep =
+					new ArrayList<com.EroprofileSearch4Java.Components>();
+				
+				com.EroprofileSearch4Java.Search.Query(Items_ep, args[2], Integer.parseInt(args[3]));
+				
+				int i_ep = 0;
+				
+				for (com.EroprofileSearch4Java.Components c:Items_ep)
+				{
+					i_ep++;
+					
+					System.out.println("ID: " + i_ep + Helper.printZero() +
+							"Title: " + c.getTitle() + Helper.printZero() +
+							"Duration: " + c.getDuration() + Helper.printZero() +
+							"Url: " + c.getUrl() + Helper.printZero() + 
+							"Thumbnail: " + c.getThumbnail());
+				}
+				break;
 			}
 			break;
 		case "-e":
@@ -295,6 +315,14 @@ public class Main
 				System.out.println("Title: " + value_fv[0]);
 				System.out.println("Url: " + value_fv[1]);
 				break;
+			case "-ep":
+				String retValue_ep = com.EroprofileExtractor4Java.Search.Query(args[2]);
+				
+				String[] value_ep = retValue_ep.split(";");
+				
+				System.out.println("Title: " + value_ep[0]);
+				System.out.println("Url: " + value_ep[1]);
+				break;
 			}
 			break;
 		case "-d":
@@ -308,7 +336,7 @@ public class Main
 			System.out.println("*");
 			System.out.println("* Supported Tubes:");
 			System.out.println("*");
-			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt), Instagram Picture (-ip), Instagram Video (-iv), Dailymotion (-dm), Pornhub (-ph), Facebook Video (-fv)");
+			System.out.println("* ccMixter (-cc), Vimeo (-vi), xHamster (-xh), YouTube (-yt), Instagram Picture (-ip), Instagram Video (-iv), Dailymotion (-dm), Pornhub (-ph), Facebook Video (-fv), Eroprofile (-ep)");
 			System.out.println("*");
 			System.out.println("* ***********************");
 			System.out.println("*");
