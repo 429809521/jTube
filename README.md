@@ -1,4 +1,4 @@
-# jTube
+# jTube   ![alt text](https://github.com/mrklintscher/jTube/blob/master/img/jTube_small_icon.png) 
 
 Search and download videos from YouTube, Vimeo, xHamster and many more.
 
